@@ -2,9 +2,9 @@ sap.ui.define(function () {
 	"use strict";
 
 	return {
-		name: "QUnit test suite for the UI5 Application: com.parth.smartleavemanagementsystem",
+		name: "QUnit test suite for the UI5 Application: com.parth.smartleavemanagement",
 		defaults: {
-			page: "ui5://test-resources/com/parth/smartleavemanagementsystem/Test.qunit.html?testsuite={suite}&test={name}",
+			page: "ui5://test-resources/com/parth/smartleavemanagement/Test.qunit.html?testsuite={suite}&test={name}",
 			qunit: {
 				version: 2
 			},
@@ -16,21 +16,21 @@ sap.ui.define(function () {
 				theme: "sap_horizon"
 			},
 			coverage: {
-				only: "com/parth/smartleavemanagementsystem/",
-				never: "test-resources/com/parth/smartleavemanagementsystem/"
+				only: "com/parth/smartleavemanagement/",
+				never: "test-resources/com/parth/smartleavemanagement/"
 			},
 			loader: {
 				paths: {
-					"com/parth/smartleavemanagementsystem": "../"
+					"com/parth/smartleavemanagement": "../"
 				}
 			}
 		},
 		tests: {
 			"unit/unitTests": {
-				title: "Unit tests for com.parth.smartleavemanagementsystem"
+				title: "Unit tests for com.parth.smartleavemanagement"
 			},
 			"integration/opaTests": {
-				title: "Integration tests for com.parth.smartleavemanagementsystem"
+				title: "Integration tests for com.parth.smartleavemanagement"
 			}
 		}
 	};

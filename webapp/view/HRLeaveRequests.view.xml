@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.HRLeaveRequests"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Leave Requests"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <Table
+    id="tblLeaveRequests"
+    items="{/LeaveRequests}">
+
+    <columns>
+
+        <Column>
+            <Text text="Leave ID"/>
+        </Column>
+
+        <Column>
+            <Text text="Employee"/>
+        </Column>
+
+        <Column>
+            <Text text="Leave Type"/>
+        </Column>
+
+        <Column>
+            <Text text="Status"/>
+        </Column>
+
+    </columns>
+
+    <items>
+
+        <ColumnListItem>
+
+            <cells>
+
+                <Text text="{LeaveId}"/>
+
+                <Text text="{EmployeeId}"/>
+
+                <Text text="{LeaveType}"/>
+
+                <ObjectStatus
+                    text="{Status}"
+                    state="{
+                        = ${Status} === 'APPROVED' ? 'Success'
+                        : ${Status} === 'PENDING' ? 'Warning'
+                        : 'Error'
+                    }"/>
+
+            </cells>
+
+        </ColumnListItem>
+
+    </items>
+
+</Table>
+        </content>
+
+    </Page>
+
+</mvc:View>

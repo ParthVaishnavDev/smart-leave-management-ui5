@@ -1,7 +1,7 @@
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "./model/models"], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("com.parth.smartleavemanagementsystem.Component", {
+	return UIComponent.extend("com.parth.smartleavemanagement.Component", {
 		metadata: {
 			manifest: "json",
 			interfaces: ["sap.ui.core.IAsyncContentCreation"]

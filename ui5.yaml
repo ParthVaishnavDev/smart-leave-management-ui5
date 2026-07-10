@@ -1,25 +1,43 @@
 specVersion: "4.0"
+
 metadata:
-  name: com.parth.smartleavemanagementsystem
+  name: com.parth.smartleavemanagement
+
 type: application
+
 framework:
   name: SAPUI5
   version: "1.149.1"
+
   libraries:
-    - name: sap.m
     - name: sap.ui.core
+    - name: sap.m
+    - name: sap.ui.layout
+    - name: sap.ui.unified
     - name: themelib_sap_horizon
+
 builder:
   resources:
     excludes:
       - "test/e2e/**"
+
 server:
   customMiddleware:
+
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertErrors: true
+        backend:
+          - path: /sap
+            url: "https://bb8534dd-13b7-4042-bba9-41728e5288ac.abap.us10.hana.ondemand.com"
+
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
+
     - name: "@ui5/middleware-code-coverage"
       afterMiddleware: compression
       configuration:
         excludePatterns:
           - "resources/"
           - "test/"
-    - name: ui5-middleware-livereload
-      afterMiddleware: compression

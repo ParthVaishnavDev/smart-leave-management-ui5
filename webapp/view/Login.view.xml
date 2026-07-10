@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="loginPage"
+        title="Smart Leave Management System"
+        showHeader="true">
+
+        <content>
+
+            <VBox
+                width="100%"
+                height="100%"
+                justifyContent="Center"
+                alignItems="Center">
+
+                <VBox
+                    width="350px"
+                    class="sapUiResponsiveMargin">
+
+                    <core:Icon
+                        src="sap-icon://employee"
+                        size="4rem"
+                        class="sapUiMediumMarginBottom" />
+
+                    <Title
+                        text="Login"
+                        level="H2" />
+
+                    <Text
+                        text="Sign in to continue"
+                        class="sapUiSmallMarginBottom" />
+
+                    <Label text="Username"/>
+
+                    <Input
+                        id="inpUsername"
+                        placeholder="Enter Username"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Label text="Password"/>
+
+                    <Input
+                        id="inpPassword"
+                        type="Password"
+                        placeholder="Enter Password"
+                        class="sapUiMediumMarginBottom"/>
+
+                    <Button
+                        text="Login"
+                        type="Emphasized"
+                        width="100%"
+                        press="onLogin"/>
+
+                </VBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

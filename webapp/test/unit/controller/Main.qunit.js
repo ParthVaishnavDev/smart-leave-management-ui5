@@ -1,5 +1,5 @@
 /* global QUnit */
-sap.ui.define(["com/parth/smartleavemanagementsystem/controller/Main.controller"], function (MainController) {
+sap.ui.define(["com/parth/smartleavemanagement/controller/Main.controller"], function (MainController) {
 	"use strict";
 
 	QUnit.module("Sample Main controller test");

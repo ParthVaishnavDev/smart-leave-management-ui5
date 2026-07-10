@@ -1,4 +1,4 @@
-# UI5 Application com.parth.smartleavemanagementsystem
+# UI5 Application com.parth.smartleavemanagement
 
 Insert the purpose of this project and some interesting info here...
 

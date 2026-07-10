@@ -1,6 +1,6 @@
 specVersion: "4.0"
 metadata:
-  name: com.parth.smartleavemanagementsystem
+  name: com.parth.smartleavemanagement
 type: application
 resources:
   configuration:

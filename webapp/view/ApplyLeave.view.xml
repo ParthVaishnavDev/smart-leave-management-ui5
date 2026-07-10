@@ -1,0 +1,98 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.ApplyLeave"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page
+        id="applyLeavePage"
+        title="Apply Leave"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                class="sapUiLargeMargin">
+
+                <Title text="Leave Application"/>
+
+                <Label text="Leave Type"/>
+
+                <Select id="selLeaveType">
+
+                    <items>
+
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="CL"
+                            text="Casual Leave"/>
+
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="SL"
+                            text="Sick Leave"/>
+
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="EL"
+                            text="Earned Leave"/>
+
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="WFH"
+                            text="Work From Home"/>
+
+                    </items>
+
+                </Select>
+
+                <Label text="From Date"/>
+
+                <DatePicker
+                    id="dpFromDate"
+                    placeholder="Select From Date"
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-dd"/>
+
+                <Label text="To Date"/>
+
+                <DatePicker
+                    id="dpToDate"
+                    placeholder="Select From Date"
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-dd"/>
+
+                <Label text="Reason"/>
+
+                <TextArea
+                    id="txtReason"
+                    rows="5"
+                    width="100%"
+                    placeholder="Enter reason"/>
+
+            </f:SimpleForm>
+
+            <HBox
+                justifyContent="Center"
+                class="sapUiMediumMarginTop">
+
+                <Button
+                    text="Submit"
+                    type="Emphasized"
+                    press="onSubmit"/>
+
+                <Button
+                    text="Clear"
+                    class="sapUiSmallMarginBegin"
+                    press="onClear"/>
+
+            </HBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,58 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.LeaveDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Leave Details"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <ObjectHeader
+                    title="Leave Request"
+                    number="LV001"
+                    numberUnit="ID" />
+
+                <SimpleForm
+                    editable="false"
+                    layout="ResponsiveGridLayout">
+
+                    <Label text="Employee ID"/>
+                    <Text text="EMP001"/>
+
+                    <Label text="Leave Type"/>
+                    <Text text="Casual Leave"/>
+
+                    <Label text="Start Date"/>
+                    <Text text="01-Aug-2026"/>
+
+                    <Label text="End Date"/>
+                    <Text text="03-Aug-2026"/>
+
+                    <Label text="Reason"/>
+                    <Text text="Family Function"/>
+
+                    <Label text="Status"/>
+                    <ObjectStatus
+                        text="Pending"
+                        state="Warning"/>
+
+                </SimpleForm>
+
+                <Button
+                    text="Delete Request"
+                    type="Reject"
+                    press="onDelete"
+                    class="sapUiMediumMarginTop"/>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

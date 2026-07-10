@@ -1,0 +1,114 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.HRHome"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="hrHomePage"
+        title="HR Home">
+
+        <content>
+
+            <VBox
+                class="sapUiLargeMargin"
+                alignItems="Center">
+
+                <Title
+                    text="HR Dashboard"
+                    level="H2"
+                    class="sapUiMediumMarginBottom"/>
+
+                <!-- KPI Tiles -->
+
+                <HBox
+                    justifyContent="Center"
+                    width="100%"
+                    class="sapUiLargeMarginBottom">
+
+                    <GenericTile
+                        header="Total"
+                        press="onTotalPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent>
+                            <NumericContent value="8"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        header="Pending"
+                        press="onPendingPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="3"
+                                valueColor="Critical"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        header="Approved"
+                        press="onApprovedPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="4"
+                                valueColor="Good"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        header="Rejected"
+                        press="onRejectedPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="1"
+                                valueColor="Error"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
+
+             
+                <Title
+                    text="Quick Actions"
+                    level="H3"
+                    class="sapUiMediumMarginBottom"/>
+
+                <VBox
+                    width="280px"
+                    alignItems="Stretch">
+
+                    <Button
+                        icon="sap-icon://employee-approvals"
+                        text="Leave Requests"
+                        type="Emphasized"
+                        width="100%"
+                        press="onLeaveRequests"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Button
+                        icon="sap-icon://log"
+                        text="Logout"
+                        width="100%"
+                        type="Reject"
+                        press="onLogout"/>
+
+                </VBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="com.parth.smartleavemanagement.controller.MyRequests"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="myRequestPage"
+        title="My Leave Requests"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <Table
+                id="tblLeaves"
+                items="{/Leaves}"
+                inset="false">
+
+                <columns>
+
+                    <Column>
+                        <Text text="Leave Type"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="From"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="To"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="Status"/>
+                    </Column>
+
+                    <Column hAlign="Center">
+                        <Text text="Delete"/>
+                    </Column>
+
+                </columns>
+
+                <items>
+
+                    <ColumnListItem>
+
+                        <cells>
+
+                            <Text text="{LeaveType}"/>
+
+                            <Text text="{FromDate}"/>
+
+                            <Text text="{ToDate}"/>
+
+                            <ObjectStatus
+                                text="{Status}"
+                                state="{StatusState}"/>
+
+                            <Button
+                                icon="sap-icon://delete"
+                                type="Reject"
+                                press="onDelete"/>
+
+                        </cells>
+
+                    </ColumnListItem>
+
+                </items>
+
+            </Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

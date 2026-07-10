@@ -1,87 +1,185 @@
 {
-	"_version": "1.21.0",
+  "_version": "1.21.0",
 
-	"sap.app": {
-		"id": "com.parth.smartleavemanagementsystem",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"applicationVersion": {
-			"version": "${version}"
-		},
-		"sourceTemplate": {
-			"id": "generator-ui5-app",
-			"version": "1.1.0"
-		}
-	},
+  "sap.app": {
+    "id": "com.parth.smartleavemanagement",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+    "mainService": {
+        "uri": "/sap/opu/odata4/sap/zui_slm_leave_o4/srvd/sap/zui_slm_leave/0001/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "applicationVersion": {
+      "version": "${version}"
+    },
+    "sourceTemplate": {
+      "id": "generator-ui5-app",
+      "version": "1.1.0"
+    }
+  },
 
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {},
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
 
-	"sap.ui5": {
-		"rootView": {
-			"viewName": "com.parth.smartleavemanagementsystem.view.App",
-			"type": "XML",
-			"id": "app"
-		},
+  "sap.ui5": {
 
-		"dependencies": {
-			"minUI5Version": "1.149.1",
-			"libs": {
-				"sap.ui.core": {},
-				"sap.m": {}
-			}
-		},
+    "rootView": {
+      "viewName": "com.parth.smartleavemanagement.view.App",
+      "type": "XML",
+      "id": "app",
+      "async": true
+    },
 
-		"handleValidation": true,
+    "dependencies": {
+      "minUI5Version": "1.149.1",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {}
+      }
+    },
 
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
+    "handleValidation": true,
 
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "com.parth.smartleavemanagementsystem.i18n.i18n",
-					"supportedLocales": ["en", "de"],
-					"fallbackLocale": "en",
-					"async": true
-				}
-			}
-		},
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
 
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"type": "View",
-				"viewType": "XML",
-				"path": "com.parth.smartleavemanagementsystem.view",
-				"controlId": "app",
-				"controlAggregation": "pages"
-			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
-				}
-			],
-			"targets": {
-				"main": {
-					"id": "main",
-					"name": "Main"
-				}
-			}
-		}
-	}
+    "models": {
+        "": {
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server"
+        },
+        "dataSource": "mainService"
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.parth.smartleavemanagement.i18n.i18n",
+          "supportedLocales": [
+            "en"
+          ],
+          "fallbackLocale": "en",
+          "async": true
+        }
+      }
+    },
+
+    "routing": {
+
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.parth.smartleavemanagement.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+
+      "routes": [
+
+        {
+          "name": "Login",
+          "pattern": "",
+          "target": "Login"
+        },
+
+        {
+          "name": "EmployeeHome",
+          "pattern": "employeeHome",
+          "target": "EmployeeHome"
+        },
+
+        {
+          "name": "ApplyLeave",
+          "pattern": "applyLeave",
+          "target": "ApplyLeave"
+        },
+
+        {
+          "name": "MyRequests",
+          "pattern": "myRequests",
+          "target": "MyRequests"
+        },
+
+        {
+          "name": "HRHome",
+          "pattern": "hrHome",
+          "target": "HRHome"
+        },
+
+        {
+          "name": "HRLeaveRequests",
+          "pattern": "hrLeaveRequests",
+          "target": "HRLeaveRequests"
+        },
+        {
+          "name": "LeaveDetails",
+          "pattern": "leaveDetails",
+          "target": "LeaveDetails"
+      }
+
+      ],
+
+      "targets": {
+
+        "Login": {
+          "id": "Login",
+          "name": "Login"
+        },
+
+        "EmployeeHome": {
+          "id": "EmployeeHome",
+          "name": "EmployeeHome"
+        },
+
+        "ApplyLeave": {
+          "id": "ApplyLeave",
+          "name": "ApplyLeave"
+        },
+
+        "MyRequests": {
+          "id": "MyRequests",
+          "name": "MyRequests"
+        },
+
+        "HRHome": {
+          "id": "HRHome",
+          "name": "HRHome"
+        },
+
+        "HRLeaveRequests": {
+          "id": "HRLeaveRequests",
+          "name": "HRLeaveRequests"
+        },
+        "LeaveDetails": {
+        "id": "LeaveDetails",
+        "name": "LeaveDetails"
+        }
+
+      }
+
+    }
+
+  }
+
 }
