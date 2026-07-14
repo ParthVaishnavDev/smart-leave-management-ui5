@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Smart Leave Management'
+define service ZUI_SLM_LEAVE {
+  expose ZC_SLM_LEAVE_REQ as LeaveRequests;
+}
