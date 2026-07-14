@@ -1,0 +1,16 @@
+@EndUserText.label : 'Department Master'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zslm_department {
+
+  key client  : abap.clnt not null;
+  key dept_id : abap.char(10) not null;
+  dept_name   : abap.char(50);
+  created_by  : abap.char(12);
+  created_at  : abap.utclong;
+  changed_by  : abap.char(12);
+  changed_at  : abap.utclong;
+
+}
