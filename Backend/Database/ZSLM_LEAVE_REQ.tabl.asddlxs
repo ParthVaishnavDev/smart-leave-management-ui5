@@ -1,0 +1,21 @@
+@EndUserText.label : 'Leave Request Transaction Data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zslm_leave_req {
+
+  key client   : abap.clnt not null;
+  key leave_id : abap.char(10) not null;
+  employee_id  : abap.char(10) not null;
+  leave_type   : abap.char(20) not null;
+  start_date   : abap.dats;
+  end_date     : abap.dats;
+  reason       : abap.char(255);
+  status       : abap.char(20);
+  created_by   : syuname;
+  created_at   : abap.utclong;
+  changed_by   : syuname;
+  changed_at   : abap.utclong;
+
+}
