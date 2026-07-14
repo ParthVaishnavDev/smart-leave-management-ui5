@@ -1,0 +1,19 @@
+@EndUserText.label : 'Employee Master Data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zslm_employee {
+
+  key client      : abap.clnt not null;
+  key employee_id : abap.char(10) not null;
+  first_name      : abap.char(40) not null;
+  last_name       : abap.char(40) not null;
+  email           : abap.char(100) not null;
+  dept_id         : abap.char(10) not null;
+  created_by      : syuname;
+  created_at      : abap.utclong;
+  changed_by      : syuname;
+  changed_at      : abap.utclong;
+
+}
