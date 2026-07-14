@@ -1,0 +1,26 @@
+managed implementation in class zbp_i_slm_leave_req unique;
+strict ( 2 );
+
+define behavior for ZI_SLM_LEAVE_REQ
+persistent table zslm_leave_req
+lock master
+authorization master ( instance )
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  field ( readonly ) LeaveId,
+                   Status,
+                   CreatedBy,
+                   CreatedAt,
+                   ChangedBy,
+                   ChangedAt;
+
+  action Approve;
+  action Reject;
+
+
+  validation ValidateLeaveDates on save { create; update; }
+  determination SetDefaultValues on modify { create; }
+}
